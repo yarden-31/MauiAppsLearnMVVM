@@ -25,6 +25,7 @@
         <Label Text="{Binding Result}" 
                FontSize="20" 
                HorizontalOptions="Center" />
+        
 
     </VerticalStackLayout>
 </ContentPage>

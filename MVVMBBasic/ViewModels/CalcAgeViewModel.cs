@@ -8,6 +8,8 @@ namespace ViewModels
     public class CalcAgeViewModel : BaseViewModel
     {
         public ICommand CalculateAgeCommand { get; }
+
+
         public CalcAgeViewModel()
         {
             Title = "דף חישוב גיל";

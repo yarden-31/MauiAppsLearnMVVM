@@ -22,11 +22,11 @@
         <Label Text="{Binding Result}" 
                FontSize="20" 
                HorizontalOptions="Center" />
-
+        
         <!-- Button To Go Back -->
         <Button Text="Go Back To Welcome Menu" 
                 Command="{Binding NavigateToWelcomeMenuCommand}" />
-
-
+        
+        
     </VerticalStackLayout>
 </ContentPage>
