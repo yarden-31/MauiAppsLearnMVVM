@@ -46,6 +46,7 @@ public abstract class BaseViewModel : INotifyPropertyChanged
             }
         }
     }
+    // ממש OnPropertyChanged כדי להודיע ל-XAML שהמאפיין השתנה
     protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

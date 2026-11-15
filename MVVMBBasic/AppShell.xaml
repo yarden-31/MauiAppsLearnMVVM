@@ -7,8 +7,19 @@
     xmlns:views="clr-namespace:Views"
     Title="MVVMBBasic">
 
+    <ShellContent
+Title="Temperature Calculator"
+Route="TemperatureCalculator"
+ContentTemplate="{DataTemplate views:TemperatureCalculatorPage}"/>
 
-    <FlyoutItem Title="Calculator Age">
+    <!--<FlyoutItem Title="Temperature Calculator">
+        <ShellContent
+        Title="Temperature Calculator"
+        Route="TemperatureCalculator"
+        ContentTemplate="{DataTemplate views:TemperatureCalculatorPage}"/>
+    </FlyoutItem>-->
+
+    <!--<FlyoutItem Title="Calculator Age">
         <ShellContent
         Title="Calculator Age"
         Route="CalcAge"
@@ -20,6 +31,6 @@
         Title="Math Calculator"
         Route="CalculatorPage"
         ContentTemplate="{DataTemplate views:CalculatorPage}"/>
-    </FlyoutItem>
+    </FlyoutItem>-->
 
 </Shell>

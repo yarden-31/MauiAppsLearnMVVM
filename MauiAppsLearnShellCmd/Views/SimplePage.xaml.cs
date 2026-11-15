@@ -25,25 +25,25 @@ public partial class SimplePage : ContentPage
     //    }
     //}
 
-    public SimplePage()
-    {
-        InitializeComponent();
-        //BindingContext = this;
-        //MyCustomProperty = "שלום עדכון מהקוד מאחור Binding MyCustomProperty!";
-        //MyLabel.Text = "x:name שלום עדכון מהקוד מאחור!";
-    }
-
-
-    //   public SimplePage() : this(new SimpleViewModel())
-    //   {
-
-
-    //   }
-    //   public SimplePage(SimpleViewModel viewModel)
+    //public SimplePage()
     //{
-    //	InitializeComponent();
-    //       // הגדרת הדף הנוכחי כמקור המידע עבור ה-XAML
-    //       BindingContext = this;
-    //       //BindingContext = viewModel;
-    //   }
+    //    InitializeComponent();
+    //    //BindingContext = this;
+    //    //MyCustomProperty = "שלום עדכון מהקוד מאחור Binding MyCustomProperty!";
+    //    //MyLabel.Text = "x:name שלום עדכון מהקוד מאחור!";
+    //}
+
+
+    public SimplePage() : this(new SimpleViewModel())
+       {
+
+
+       }
+       public SimplePage(SimpleViewModel viewModel)
+    {
+    	InitializeComponent();
+           // הגדרת הדף הנוכחי כמקור המידע עבור ה-XAML
+           BindingContext = this;
+           //BindingContext = viewModel;
+       }
 }
