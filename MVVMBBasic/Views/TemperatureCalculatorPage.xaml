@@ -5,10 +5,10 @@
              xmlns:vm="clr-namespace:ViewModels"
              x:DataType="vm:TemperatureCalculatorViewModel"
              x:Class="Views.TemperatureCalculatorPage"
-             Title="TemperatureCalculatorPage">
-    
+             Title="Temperature Calculator  Page">
+
     <VerticalStackLayout Padding="30" Spacing="15" VerticalOptions="Center">
-        
+
         <!--Entry for Fahrenheit temperature input-->
         <Entry Text="{Binding TemperatureFahrenheit}" 
                Placeholder="Enter temperature in Fahrenheit" 
@@ -22,7 +22,11 @@
         <Label Text="{Binding Result}" 
                FontSize="20" 
                HorizontalOptions="Center" />
-        
-        
+
+        <!-- Button To Go Back -->
+        <Button Text="Go Back To Welcome Menu" 
+                Command="{Binding NavigateToWelcomeMenuCommand}" />
+
+
     </VerticalStackLayout>
 </ContentPage>

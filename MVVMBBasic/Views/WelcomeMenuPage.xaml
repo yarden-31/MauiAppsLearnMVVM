@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Views.WelcomeMenuPage"
+             xmlns:vm="clr-namespace:ViewModels"
+             x:DataType="vm:WelcomeMenuViewModel"             
+             Title="{Binding Title}"                      
+             Shell.FlyoutBehavior="Disabled">
+
+    <Grid Padding="20">
+        <Border StrokeShape="RoundRectangle 12"
+                StrokeThickness="1"
+                Stroke="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray900}}"
+                BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                MaximumWidthRequest="400"
+                Padding="30">
+            <Border.Shadow>
+                <Shadow Brush="Black" Offset="0,4" Radius="10" Opacity="0.1" />
+            </Border.Shadow>
+
+            <VerticalStackLayout Spacing="25" HorizontalOptions="Fill">
+
+                <!-- תמונה של האפליקציה בדף ברוכים הבאים -->
+                <Image Source="welcome_shell.png"
+                       HeightRequest="140"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,10"/>
+
+                <Label Text="Calculator Menu:"
+                       FontSize="26"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       TextColor="{StaticResource Primary}"/>
+
+                <Button Text="Temperature Calculator"
+                    Command="{Binding NavigateToTemperatureCommand}"
+                    FontAttributes="Bold"
+                    CornerRadius="8"
+                    HeightRequest="48"/>
+
+                <Button Text="Age Calculator"
+                    Command="{Binding NavigateToCalcAgeCommand}"
+                    FontAttributes="Bold"
+                    CornerRadius="8"
+                    HeightRequest="48"/>
+
+                <Button Text="Math Calculator"
+                    Command="{Binding NavigateToMathCommand}"
+                    FontAttributes="Bold"
+                    CornerRadius="8"
+                    HeightRequest="48"/>
+
+
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+
+</ContentPage>

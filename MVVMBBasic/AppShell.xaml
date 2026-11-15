@@ -7,30 +7,36 @@
     xmlns:views="clr-namespace:Views"
     Title="MVVMBBasic">
 
-    <ShellContent
-Title="Temperature Calculator"
-Route="TemperatureCalculator"
-ContentTemplate="{DataTemplate views:TemperatureCalculatorPage}"/>
+    <!-- Welcome Menu -->
+    <FlyoutItem Title="Welcome">
+        <ShellContent
+        Title="Welcome"
+        Route="WelcomeMenu"
+        ContentTemplate="{DataTemplate views:WelcomeMenuPage}"/>
+    </FlyoutItem>
 
-    <!--<FlyoutItem Title="Temperature Calculator">
+    <!-- Temperature Calculator -->
+    <FlyoutItem Title="Temperature Calculator">
         <ShellContent
         Title="Temperature Calculator"
         Route="TemperatureCalculator"
         ContentTemplate="{DataTemplate views:TemperatureCalculatorPage}"/>
-    </FlyoutItem>-->
+    </FlyoutItem>
 
-    <!--<FlyoutItem Title="Calculator Age">
+    <!-- Age Calculator -->
+    <FlyoutItem Title="Calculator Age">
         <ShellContent
         Title="Calculator Age"
         Route="CalcAge"
         ContentTemplate="{DataTemplate views:CalcAgePage}"/>
     </FlyoutItem>
 
+    <!-- Math Calculator -->
     <FlyoutItem Title="Math Calculator">
         <ShellContent
         Title="Math Calculator"
-        Route="CalculatorPage"
+        Route="Calculator"
         ContentTemplate="{DataTemplate views:CalculatorPage}"/>
-    </FlyoutItem>-->
+    </FlyoutItem>
 
 </Shell>
