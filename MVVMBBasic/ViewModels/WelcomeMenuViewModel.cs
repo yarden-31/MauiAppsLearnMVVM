@@ -14,6 +14,8 @@ namespace ViewModels
 
         public ICommand NavigateToMathCommand { get; }
 
+        public ICommand NavigateToCurrencyCommand { get; }
+
 
         public WelcomeMenuViewModel()
         {
@@ -25,6 +27,9 @@ namespace ViewModels
 
             NavigateToMathCommand =
                 new Command(async () => await Shell.Current.GoToAsync("//Calculator"));
+
+            NavigateToCurrencyCommand =
+                new Command(async () => await Shell.Current.GoToAsync("//CurrencyCalculator"));
 
             Title = "Calculator Menu:";
         }

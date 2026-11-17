@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
 
 namespace ViewModels;
 
@@ -11,6 +12,16 @@ public abstract class BaseViewModel : INotifyPropertyChanged
 {
     private bool _isLoading;
     private string _title = string.Empty;
+
+    public ICommand NavigateToWelcomeMenuCommand { get; }
+
+    public BaseViewModel()
+    {
+        NavigateToWelcomeMenuCommand = new Command(async () =>
+        {
+            await Shell.Current.GoToAsync("//WelcomeMenu");
+        });
+    }
 
     public event PropertyChangedEventHandler? PropertyChanged;
 

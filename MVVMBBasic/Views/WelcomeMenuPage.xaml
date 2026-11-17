@@ -23,10 +23,10 @@
             <VerticalStackLayout Spacing="25" HorizontalOptions="Fill">
 
                 <!-- תמונה של האפליקציה בדף ברוכים הבאים -->
-                <Image Source="welcome_shell.png"
+                <!--<Image Source="welcome_shell.png"
                        HeightRequest="140"
                        HorizontalOptions="Center"
-                       Margin="0,0,0,10"/>
+                       Margin="0,0,0,10"/>-->
 
                 <Label Text="Calculator Menu:"
                        FontSize="26"
@@ -48,6 +48,12 @@
 
                 <Button Text="Math Calculator"
                     Command="{Binding NavigateToMathCommand}"
+                    FontAttributes="Bold"
+                    CornerRadius="8"
+                    HeightRequest="48"/>
+                
+                <Button Text="Currency Calculator"
+                    Command="{Binding NavigateToCurrencyCommand}"
                     FontAttributes="Bold"
                     CornerRadius="8"
                     HeightRequest="48"/>

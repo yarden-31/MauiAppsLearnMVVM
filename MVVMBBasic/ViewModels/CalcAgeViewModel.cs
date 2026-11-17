@@ -9,11 +9,16 @@ namespace ViewModels
     {
         public ICommand CalculateAgeCommand { get; }
 
-
+        //public ICommand NavigateToWelcomeMenuCommand { get; }
         public CalcAgeViewModel()
         {
             Title = "דף חישוב גיל";
             CalculateAgeCommand = new Command(CalculateAge);
+            //NavigateToWelcomeMenuCommand = new Command(async () =>
+            //{
+            //    await Shell.Current.GoToAsync("//WelcomeMenu");
+            //});
+
         }
         private string _yearOfBirth = string.Empty;
         private string _result = string.Empty;

@@ -15,6 +15,9 @@ namespace ViewModels
 
         public ICommand DivideCommand { get; }
 
+        //public ICommand NavigateToWelcomeMenuCommand { get; }
+
+
         public CalculatorViewModel()
         {
             Title = "מחשבון מתמטי";
@@ -22,6 +25,10 @@ namespace ViewModels
             SubtractCommand = new Command(Subtract);
             MultiplyCommand = new Command(Multiply);
             DivideCommand = new Command(Divide);
+            //NavigateToWelcomeMenuCommand = new Command(async () =>
+            //{
+            //    await Shell.Current.GoToAsync("//WelcomeMenu");
+            //});
         }
 
         private double _firstNumber;

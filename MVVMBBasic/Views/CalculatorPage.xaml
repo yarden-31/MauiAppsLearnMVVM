@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Views"
+             xmlns:vm="clr-namespace:ViewModels"
+             x:DataType="vm:CalculatorViewModel"
              x:Class="Views.CalculatorPage"
              Title="מחשבון">
     
@@ -12,22 +15,41 @@
                HorizontalOptions="Center" />
 
         <!-- תיבות קלט למספרים -->
-        <Entry x:Name="Number1Entry" 
-               Placeholder="הכנס מספר ראשון" 
-               Keyboard="Numeric" 
+        <Entry Text="{Binding FirstNumber, Mode=TwoWay}"
+               Placeholder="Enter First Number"
+               Keyboard="Numeric"
                HeightRequest="48" />
 
-        <Entry x:Name="Number2Entry" 
-               Placeholder="הכנס מספר שני" 
+        <Entry Text="{Binding SecondNumber, Mode=TwoWay}"
+               Placeholder="Enter Second Number"
                Keyboard="Numeric" 
                HeightRequest="48" />
 
         <!-- כפתורי פעולות החשבון -->
-        <Grid ColumnDefinitions="*,*,*,*" ColumnSpacing="10" HeightRequest="50">
-            <Button Grid.Column="0" Text="+" Clicked="OnAddClicked" FontSize="20" />
-            <Button Grid.Column="1" Text="-" Clicked="OnSubtractClicked" FontSize="20" />
-            <Button Grid.Column="2" Text="*" Clicked="OnMultiplyClicked" FontSize="20" />
-            <Button Grid.Column="3" Text="/" Clicked="OnDivideClicked" FontSize="20"/>
+        <Grid ColumnDefinitions="*,*,*,*"
+              ColumnSpacing="10"
+              HeightRequest="50">
+
+            <Button Grid.Column="0"
+                    Text="+"
+                    Command="{Binding AddCommand}"
+                    FontSize="20" />
+
+            <Button Grid.Column="1"
+                    Text="-"
+                    Command="{Binding SubtractCommand}"
+                    FontSize="20" />
+
+            <Button Grid.Column="2"
+                    Text="*"
+                    Command="{Binding MultiplyCommand}"
+                    FontSize="20" />
+
+            <Button Grid.Column="3"
+                    Text="/"
+                    Command="{Binding DivideCommand}"
+                    FontSize="20" />
+
         </Grid>
         
         <!-- הצגת התוצאה באמצעות Border המודרני -->
@@ -37,10 +59,17 @@
             </Border.StrokeShape>
 
             <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
-                <Label Text="התוצאה היא:" FontSize="20" FontAttributes="Bold" />
-                <Label x:Name="ResultLabel" Text="0" FontSize="20" FontAttributes="Bold" TextColor="Green" />
+                <Label Text="The Result is:" FontSize="20" FontAttributes="Bold" />
+                <Label Text="{Binding Result}"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="Green" />
             </HorizontalStackLayout>
         </Border>
+
+        <!-- Button To Go Back -->
+        <Button Text="Go Back To Welcome Menu"
+                Command="{Binding NavigateToWelcomeMenuCommand}" />
 
     </VerticalStackLayout>
 </ContentPage>

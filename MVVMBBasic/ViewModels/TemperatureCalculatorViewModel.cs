@@ -9,17 +9,17 @@ namespace ViewModels
     {
         public ICommand ConvertToCelsiusCommand { get; }
 
-        public ICommand NavigateToWelcomeMenuCommand { get; }
+        //public ICommand NavigateToWelcomeMenuCommand { get; }
 
         public TemperatureCalculatorViewModel()
         {
             Title = "מחשבון טמפרטורה";
             ConvertToCelsiusCommand = new Command(ConvertToCelsius);
             
-            NavigateToWelcomeMenuCommand = new Command(async () =>
-            {
-                await Shell.Current.GoToAsync("//WelcomeMenuPage");
-            });
+            //NavigateToWelcomeMenuCommand = new Command(async () =>
+            //{
+            //    await Shell.Current.GoToAsync("//WelcomeMenu");
+            //});
         }
 
         // מאפיין לטמפרטורה במעלות פרנהייט

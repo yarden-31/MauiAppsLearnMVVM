@@ -26,4 +26,9 @@ public partial class WelcomeMenuPage : ContentPage
     {
         await Shell.Current.GoToAsync("CalculatorPage");
     }
+
+    public async void NavigateToCurrencyPage(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("CurrencyCalculatorPage");
+    }
 }
